@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <!--Meta Tags which give information about the site but do not display-->
+    <meta name="description" content="Music By Mood Website">
+    <meta name="keywords" content="HTML, CSS, Javascript, Python">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link to stylesheet (External Style Sheet) -->
+    <link rel="stylesheet" href="General.css">
+
+
+
+</head>
+
+<body id="body">
+
+    <header>
+        <p id='mbm'>MUSIC BY MOOD</p>
+        <p id="slogan">Upload your selfie, Listen to Music's based on your selfie's mood </p>
+        <button id='listenButton'>Listen</button>
+        <button id='aboutButton'>About</button>
+    </header>
+
+    <nav>
+        <p><b>LISTEN</b></p>
+    </nav>
+
+    <section>
+
+        <div id="PageOne">
+            <form id="upload image" action="/action_page.php">
+                Select a file: <input type="file" name="myFile"><br><br>
+                <img src="LeftArrow.png" width="105" height="45"></img> 
+                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
+            </form><br><br>
+            <!--Need to check that this image is allowed -->
+            <!--Need to display the image  -->
+
+        </div>
+
+
+
+        <div id="PageTwo">
+            <p>Select Your Favorite Genre: </p>
+            <form id="genrePicker">
+                <input type="radio" name="genre" value="EDM" checked> EDM<br>
+                <input type="radio" name="genre" value="Rap"> Rap<br>
+                <input type="radio" name="genre" value="Pop"> Pop<br>
+                <input type="radio" name="genre" value="Country"> Country<br>
+                <input type="radio" name="genre" value="Alternative"> Alternative<br>
+
+                <img src="LeftArrow.png" width="105" height="45"></img> 
+                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
+            </form><br><br>
+        </div>
+
+        <div id="PageThree">
+            <p>Would you like to listen to ??? music? </p>
+            <form id="alterMood">
+                <input type="radio" name="alter" value="true" checked>Yes<br>
+                <input type="radio" name="alter" value="false">No
+
+                <img src="LeftArrow.png" width="105" height="45"></img> 
+                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
+            </form><br> <br>
+        </div>
+
+
+        <div id="PageFour">
+            <p>How would you like to alter the mood of the playlist? </p>
+            <form id="alter">
+                <input type="radio" name="changeMood" value="happy" checked>Uplift me!<br>
+                <input type="radio" name="changeMood" value="sad">Deflate me!<br>
+                <input type="radio" name="changeMood" value="remain" checked>Remain ???? <br>
+
+                <img src="LeftArrow.png" width="105" height="45"></img> 
+                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
+            </form><br><br>
+        </div>
+
+        <div id="PageFive">
+            <p>Listen to your skillfully choosen playlist! </p>
+            <iframe src="https://www.spotify.com/us/" height="200" width="300"></iframe><br>
+
+            <button id="startOver">Start Over</button>
+
+            <img src="LeftArrow.png" width="105" height="45"></img> 
+            
+        </div><br><br>
+
+
+    </section>
+</body>
+
+</html>
