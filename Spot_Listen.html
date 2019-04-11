@@ -30,15 +30,17 @@
 
         <div id="PageOne">
             <form id="upload image" action="/action_page.php">
-                Select a file: <input type="file" name="myFile"><br><br>
-                <img src="LeftArrow.png" width="105" height="45"></img> 
-                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
-            </form><br><br>
+                Select a file: <br>
+                <input type="file" name="imgFile"><br>
+                <br>
+                <input type="button" value="Continue" onsubmit="getMood(imgFile)">
+            </form>
             <!--Need to check that this image is allowed -->
             <!--Need to display the image  -->
-
+            <!--Need onclick to show loading animation-->
+            <!--Need to get and print out Mood-->
         </div>
-
+        <br><br>
 
 
         <div id="PageTwo">
@@ -49,48 +51,57 @@
                 <input type="radio" name="genre" value="Pop"> Pop<br>
                 <input type="radio" name="genre" value="Country"> Country<br>
                 <input type="radio" name="genre" value="Alternative"> Alternative<br>
-
-                <img src="LeftArrow.png" width="105" height="45"></img> 
-                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
-            </form><br><br>
+                <br>
+                <input type="button" value="Continue">
+            </form>
         </div>
+        <br><br>
+
 
         <div id="PageThree">
-            <p>Would you like to listen to ??? music? </p>
-            <form id="alterMood">
-                <input type="radio" name="alter" value="true" checked>Yes<br>
-                <input type="radio" name="alter" value="false">No
+            <p>Would you like to listen to ??? music?</p>
+            <form id="alter">
+                <input type="radio" name="changeMood" value="remain" checked>Yes! Remain ???? <br>
+                <input type="radio" name="changeMood" value="uplift" checked>No, uplift me!<br>
+                <input type="radio" name="changeMood" value="deflate">No, deflate me!<br>
+                <br>
+                <input type="button" value="Continue" onsubmit="getPlaylist(a,a,a)">
+            </form>
 
-                <img src="LeftArrow.png" width="105" height="45"></img> 
-                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
-            </form><br> <br>
+            <!--Need to only make this show up if previous question is yes-->
         </div>
+        <br><br>
 
 
         <div id="PageFour">
-            <p>How would you like to alter the mood of the playlist? </p>
-            <form id="alter">
-                <input type="radio" name="changeMood" value="happy" checked>Uplift me!<br>
-                <input type="radio" name="changeMood" value="sad">Deflate me!<br>
-                <input type="radio" name="changeMood" value="remain" checked>Remain ???? <br>
-
-                <img src="LeftArrow.png" width="105" height="45"></img> 
-                <input type="image" src="RightArrow.png" alt="Submit" width="105" height="45">
-            </form><br><br>
-        </div>
-
-        <div id="PageFive">
             <p>Listen to your skillfully choosen playlist! </p>
-            <iframe src="https://www.spotify.com/us/" height="200" width="300"></iframe><br>
+            <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="600" 
+            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>
+            <br>
+            <button id="startOver">Start Over</button> 
 
-            <button id="startOver">Start Over</button>
-
-            <img src="LeftArrow.png" width="105" height="45"></img> 
-            
-        </div><br><br>
+        </div>
+        <br><br>
 
 
     </section>
+
 </body>
 
 </html>
+
+
+
+<script>
+
+function getMood (img) { 
+    //Insert Model Stuff
+    //Return Mood
+    //Also maybe print the sentence "Your mood is: "
+}
+
+function getPlaylist (mood, genre, alter) { 
+    //Insert Spotify stuff
+}
+
+</script>
