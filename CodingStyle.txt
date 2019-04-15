@@ -27,10 +27,20 @@ Javascript
 * Line wrapping - New line at 80 characters.
 
 
-HTML/CSS
+HTML
 * Variable & Function names - Use Camelcase.
 * Whitespace - No tabs, single space only.
 * Comments - Comments not needed.
 * Indentation - Indent 4 spaces.
 * Capitalization - Using Camelcase so do not capitalize the beginning of any word.
 * Line wrapping - New line at 80 characters.
+
+
+CSS
+* Variable & Function names - Use Camelcase
+* Whitespace - No tabs, single space only.
+* Comments - Comments not needed.
+* Indentation - Indent 4 spaces.
+* Capitalization - Using Camelcase but Capitalize first letter of #Page variables.
+* Line wrapping - New line at 80 characters.
+
