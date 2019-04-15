@@ -6,31 +6,63 @@ body {
 	font-size: 20px; 
 }
 
-.mbm {
+#mbm {
 	margin-top: 30px; 
 	text-align: center;
-	font-size: 40px; 
+	font-size: 35px; 
 }
 
-.slogan {  
-	font-size: 27px; 
+button, #startOver1, #startOver2, #startOver3, #startOver4 {
+	color: white;
+	background-color: darkgrey;
+}
+
+#slogan {  
+	font-size: 20px; 
 }
 
 header { 
 	text-align: center;
 }
 
-.startOver {
-	color: white;
-	background-color: darkgrey;
-}
 
-#PageOne, #PageTwo, #PageThree, #PageFour, #PageFive {
-	background-color: rgb(180, 182, 182);
+#PageOne {
+	background-color:  rgb(97, 97, 97);
 	margin-left: 100px; 
 	margin-right: 150px;
 	padding: 25px;
 }
 
+#PageTwo, #PageThree, #PageFour, #PageFive {
+	background-color:  rgb(97, 97, 97);
+	margin-left: 100px; 
+	margin-right: 150px;
+	padding: 25px;
+	visibility: hidden;
+}
 
+#SpotIFrame {
+	position: relative;
+	width: "400px";
+	height: "400px";
+ 
+}
 
+#output2 {
+	-webkit-filter: grayscale(100%); /* Not sure if this acutally converts the image or just makes it look black and white */
+  	filter: grayscale(100%);
+}
+
+.resp-container {
+    position: relative;
+    overflow: hidden; 
+}
+
+.resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border: 0;
+}
