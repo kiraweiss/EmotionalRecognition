@@ -1,0 +1,36 @@
+
+body {
+	background-color: black;
+	color: white;
+	font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 20px; 
+}
+
+.mbm {
+	margin-top: 30px; 
+	text-align: center;
+	font-size: 40px; 
+}
+
+.slogan {  
+	font-size: 27px; 
+}
+
+header { 
+	text-align: center;
+}
+
+.startOver {
+	color: white;
+	background-color: darkgrey;
+}
+
+#PageOne, #PageTwo, #PageThree, #PageFour, #PageFive {
+	background-color: rgb(180, 182, 182);
+	margin-left: 100px; 
+	margin-right: 150px;
+	padding: 25px;
+}
+
+
+
