@@ -1,0 +1,51 @@
+<!doctype html>
+<link rel="stylesheet" href="General.css">
+
+
+    <title>EmotionDetector</title>
+    {% if prediction %}
+    <h2>You are {{ prediction }}!</h2>
+    {% endif %}
+    {% if filename %}
+    <h2>{{ filename }}</h2>
+    <!--<img src="{{ url_for('get_file', filename=filename) }}">-->
+    <img src="/static/{{ url_for('get_file', filename=filename) }}">
+    {% endif %}
+
+
+<div id="PageTwo">
+            <p>Select Your Favorite Genre: </p>
+            <form id="genreForm" action="#" method="POST" class="genreForm">
+                <input type="radio" name="genre" value="edm" checked> EDM<br>
+                <input type="radio" name="genre" value="rap"> Rap<br>
+                <input type="radio" name="genre" value="pop"> Pop<br>
+                <input type="radio" name="genre" value="country"> Country<br>
+                <input type="radio" name="genre" value="alternative"> Alternative<br><br>
+
+                <button id="startOver2" onclick="startOver()">Start Over</button>
+                <button type="button" value="getGenre" onclick="getGenre(genreForm, genre)">Continue</but$
+            </form>
+        </div>
+        <br><br>
+
+<div id="PageThree">
+            <p id="p3Question"></p>
+            <form id="alter">
+                <input type="radio" name="moodAlter" value="mood1" id="mood1" checked>
+                <label for="alter">No, I'd like happy music.</label></input><br>
+                <input type="radio" name="moodAlter" value="mood2" id="mood2">
+                <label for="alter">No, I'd like sad music.</label></input><br>
+                <input type="radio" name="moodAlter" value="mood3" id="mood3">
+                <label for="alter">No, I'd like angry music.</label></input><br>
+                <input type="radio" name="moodAlter" value="mood4" id="mood4">
+                <label for="alter">No, I'd like to be surprised.</label></input><br><br>
+
+                <button id="startOver3" onclick="startOver()">Start Over</button>
+                <input type="button" value="Continue" onclick="alterMood()">
+            </form>
+        </div>
+        <br><br>
+
+
+<div id="PageFour">
+            <p>Listen to your skillfully choosen playlist! </p>
