@@ -1,0 +1,1 @@
+{"version":1,"ops":[{"author":{"id":"e0b188f8ff198e74c80bd3cd136ed3617579e3e9"},"files":null,"message":"bug on first container, make entire page start over when browser is reloaded, scscroll to top when clocked, change user's image to default image","timestamp":1556054614,"title":"Start Over Button","type":1}]}
