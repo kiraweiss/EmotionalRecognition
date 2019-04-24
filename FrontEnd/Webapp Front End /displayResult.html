@@ -1,5 +1,5 @@
 <!doctype html>	
-<link rel="stylesheet" type="text/css"  href="{ url_for('get_file', filename="/home/ubuntu/cs121/styles/General.css") }">
+<link rel="stylesheet" type="text/css"  href="../../static/General.css"/>
 
     <title>EmotionDetector</title>
 
@@ -11,7 +11,7 @@
         {% endif %}
         {% if filename %}
         <h2>{{ filename }}</h2>
-        <!--<img src="{{ url_for('get_file', filename=filename) }}">-->
+        <!--<img src="{{ url_for("get_file", filename=filename) }}">-->
         <img src="/static/{{ url_for('get_file', filename=filename) }}">
         {% endif %}
     </div>
@@ -66,22 +66,16 @@
 
 
 <script>
-
-    Override
-    public void configure(WebSecurity web) throws Exception {
-        web
-                .ignoring()
-                .antMatchers("/resources/**");
-    }
-
+    
     function displayImage(event) {
-        image = document.getElementById('output');
+        image = document.getElementById("output");
         image.src = URL.createObjectURL(event.target.files[0]);
-        image = document.getElementById('output2');
-        image.src = URL.createObjectURL(event.target.files[0]); //not sure if its acutally black and white though. 
+        image = document.getElementById("output2");
+        image.src = URL.createObjectURL(event.target.files[0]); 
+        //not sure if its acutally black and white though. 
 
         getMood(image)
-        //call get mood 
+        //call get mood
     };
 
     //need to write
@@ -91,21 +85,21 @@
     function getMood(img) {
         //default mood = "happy"
 
-        //Insert Model Stuff  
+        //Insert Model Stuff
 
         var sentence = "Your mood is: " + mood;
-        document.getElementById('moodSentence').innerHTML = sentence;
+        document.getElementById("moodSentence").innerHTML = sentence;
 
     }
 
 
     function makeNextVisible() {
-        document.getElementById('PageTwo').style.visibility='visible';
+        document.getElementById("PageTwo").style.visibility="visible";
 
     }
 
 
-    function getGenre(form, name) { 
+    function getGenre(form, name) {
         var val;
         var radios = form.elements;
 
@@ -123,42 +117,46 @@
     function alterMoodSetQuestion(val) {
         genre = val.toLowerCase();
 
-        document.getElementById("p3Question").innerHTML = "Would you like to listen to "
-            + mood + " " + genre + " music?";
+        document.getElementById("p3Question").innerHTML = 
+            "Would you like to listen to "+ mood + " " + genre + " music?";
 
         if (mood == "happy") {
-            document.getElementById('alter').getElementsByTagName('label')[0].innerHTML = "Yes, remain happy.";
-            document.getElementById('mood1').checked = true;
+            document.getElementById("alter").getElementsByTagName("label")[0].innerHTML =
+                "Yes, remain happy.";
+            document.getElementById("mood1").checked = true;
         } else if (mood == "sad") {
-            document.getElementById('alter').getElementsByTagName('label')[1].innerHTML = "Yes, remain sad.";
-            document.getElementById('mood1').checked = false;
-            document.getElementById('mood2').checked = true;
+            document.getElementById("alter").getElementsByTagName("label")[1].innerHTML =
+                "Yes, remain sad.";
+            document.getElementById("mood1").checked = false;
+            document.getElementById("mood2").checked = true;
         } else if (mood == "angry") {
-            document.getElementById('alter').getElementsByTagName('label')[2].innerHTML = "Yes, remain angry.";
-            document.getElementById('mood1').checked = false;
-            document.getElementById('mood3').checked = true;
+            document.getElementById("alter").getElementsByTagName("label")[2].innerHTML =
+                "Yes, remain angry.";
+            document.getElementById("mood1").checked = false;
+            document.getElementById("mood3").checked = true;
         } else if (mood == "surprised") {
-            document.getElementById('alter').getElementsByTagName('label')[3].innerHTML = "Yes, I'd like to be surprised.";
-            document.getElementById('mood1').checked = false;
-            document.getElementById('mood4').checked = true;
+            document.getElementById("alter").getElementsByTagName("label")[3].innerHTML =
+                "Yes, I'd like to be surprised.";
+            document.getElementById("mood1").checked = false;
+            document.getElementById("mood4").checked = true;
         }
 
-        document.getElementById('PageThree').style.visibility='visible';
+        document.getElementById("PageThree").style.visibility="visible";
     }
 
     function alterMood() {
-        if (document.getElementById('mood1').checked == true) {
+        if (document.getElementById("mood1").checked == true) {
             mood = "happy";
-        } else if (document.getElementById('mood2').checked == true) {
+        } else if (document.getElementById("mood2").checked == true) {
             mood = "sad";
-        } else if (document.getElementById('mood3').checked == true) {
+        } else if (document.getElementById("mood3").checked == true) {
             mood = "angry";
-        } else if (document.getElementById('mood4').checked == true) {
+        } else if (document.getElementById("mood4").checked == true) {
             mood = "surprised";
         }
 
         getPlaylist();
-        document.getElementById('PageFour').style.visibility='visible';
+        document.getElementById("PageFour").style.visibility="visible";
     }
 
 
@@ -167,45 +165,61 @@
     function getPlaylist() {
         if (mood == "happy") {
             if (genre == "edm") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DX6VdMW310YC7?si=if2FHhFnRWO0tFcPwVAV8Q"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/1J7Ss023ptcos7ZqFS7rjE?si=t37Sb11oROuv1nPu8tQb0A"
             } else if (genre == "rap") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/2BnJlF2E9UgIyuL1qlNjjG?si=GTp552wKTfedNhg22KHqMQ"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/2BnJlF2E9UgIyuL1qlNjjG?si=GTp552wKTfedNhg22KHqMQ"
             } else if (genre == "country") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DWTkxQvqMy4WW?si=RKFm7gREQqSxDZDRd3KpqQ"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DWTkxQvqMy4WW?si=RKFm7gREQqSxDZDRd3KpqQ"
             } else if (genre == "pop") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC?si=QKkuTurnRS2nZXkl75utIg"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC?si=QKkuTurnRS2nZXkl75utIg"
             } else if (genre == "alternative") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/5CDM8rVt27yt09BO5wA5oP?si=dLVDN59NSTanreABrVGjzw"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/5CDM8rVt27yt09BO5wA5oP?si=dLVDN59NSTanreABrVGjzw"
             }
         }
         else if (mood == "sad") {
             if (genre == "edm") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DWVrtsSlLKzro?si=oBJUqxjSQJiPIuiVGrIXuw"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DWVrtsSlLKzro?si=oBJUqxjSQJiPIuiVGrIXuw"
             } else if (genre == "rap") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/4XpY2PtCUqzhddUnFEbckt?si=SST3A5IRRvSu7xqhffLBoQ"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/4XpY2PtCUqzhddUnFEbckt?si=SST3A5IRRvSu7xqhffLBoQ"
             } else if (genre == "country") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DXdmMcgFhLQ8u?si=a2XS0BFGTO-tqDmDq3LOWQ"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DXdmMcgFhLQ8u?si=a2XS0BFGTO-tqDmDq3LOWQ"
             } else if (genre == "pop") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DX3YSRoSdA634?si=KIcRrJ_0SA-TIbLvCJ34pg"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DX3YSRoSdA634?si=KIcRrJ_0SA-TIbLvCJ34pg"
             } else if (genre == "alternative") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/5tPAmcKqoBrGChGO6lMuHu?si=tunyjGu8Q92WOoeNgYluMA"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/5tPAmcKqoBrGChGO6lMuHu?si=tunyjGu8Q92WOoeNgYluMA"
             }
         }
         else if (mood == "angry") {
             if (genre == "edm") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DX3ND264N08pv?si=lOVuq3rQSnmxft5zRed_Vg"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DX3ND264N08pv?si=lOVuq3rQSnmxft5zRed_Vg"
             } else if (genre == "rap") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/62cdYStZNC1u3l6Cu9phP9?si=Q7m2SsEwQ-2UQzigsrN1lA"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/62cdYStZNC1u3l6Cu9phP9?si=Q7m2SsEwQ-2UQzigsrN1lA"
             } else if (genre == "country") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/37i9dQZF1DXc0fQ4sGOnVJ?si=v1KpAR61R9OuTCegBzltZw"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/37i9dQZF1DXc0fQ4sGOnVJ?si=v1KpAR61R9OuTCegBzltZw"
             } else if (genre == "pop") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/4ca6MwaTAiz852ZffCSWRS?si=DCGL86GsQ0ah12PrhsJG9w"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/4ca6MwaTAiz852ZffCSWRS?si=DCGL86GsQ0ah12PrhsJG9w"
             } else if (genre == "alternative") {
-                document.getElementById('spotIframe').src = "https://open.spotify.com/embed/playlist/6UkcmQf7tYlGKX18IL8cyd?si=5oZ4NmJfQhCZIV_uMCw6AQ"
+                document.getElementById("spotIframe").src =
+                    "https://open.spotify.com/embed/playlist/6UkcmQf7tYlGKX18IL8cyd?si=5oZ4NmJfQhCZIV_uMCw6AQ"
             }
         }
         else if (mood == "surpise") {
-            document.getElementById('spotIframe').src = "https://open.spotify.com/embed/user/1216748702/playlist/1J7Ss023ptcos7ZqFS7rjE"
+            document.getElementById("spotIframe").src =
+                "https://open.spotify.com/embed/user/1216748702/playlist/1J7Ss023ptcos7ZqFS7rjE"
         }
     }
 
@@ -213,9 +227,9 @@
         mood = "happy";
         image = "images.png";
 
-        document.getElementById('PageTwo').style.visibility='hidden';
-        document.getElementById('PageThree').style.visibility='hidden';
-        document.getElementById('PageFour').style.visibility='hidden';
+        document.getElementById("PageTwo").style.visibility="hidden";
+        document.getElementById("PageThree").style.visibility="hidden";
+        document.getElementById("PageFour").style.visibility="hidden";
     }
 
 </script>
